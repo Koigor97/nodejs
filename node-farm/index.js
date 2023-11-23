@@ -1,6 +1,7 @@
 const fs = require("fs");
 const http = require("http");
 const url = require("url");
+const slugify = require("slugify");
 const fillInCardTemplate = require("./modules/replaceTemplate");
 /////////////////////////////////////////////////////////////
 // FILES
@@ -34,6 +35,9 @@ const fillInCardTemplate = require("./modules/replaceTemplate");
 
 const data = fs.readFileSync("./dev-data/data.json", "utf-8");
 const dataObject = JSON.parse(data);
+
+const slugs = dataObject.map((el) => slugify(el.productName, { lower: true }));
+// console.log(slugs);
 
 const overviewTemplate = fs.readFileSync(
   `${__dirname}/templates/overview-template.html`,
