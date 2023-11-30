@@ -52,6 +52,21 @@ testTour
     console.log(err);
   });
 
+const testTour2 = new Tour({
+  name: 'Jungle excursion',
+  rating: 7.7,
+  price: 100,
+});
+
+testTour2
+  .save()
+  .then((doc) => {
+    console.log(doc);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
 // Starting the server and listening for requests
 const port = process.env.PORT || 3000;
 /////////////////////////////////////////////////////
