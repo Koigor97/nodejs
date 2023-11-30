@@ -3,7 +3,7 @@ const tourController = require('./../controllers/tourController');
 const router = express.Router();
 
 // creating a param middleware
-router.param('id', tourController.checkID);
+// router.param('id', tourController.checkID);
 /////////////////////////////////////////////////////
 // specifyin the route base the given protocol - GET & POST
 router
