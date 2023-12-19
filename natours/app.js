@@ -16,12 +16,8 @@ if (process.env.NODE_ENV === 'development') {
 // including a middleware
 app.use(express.json());
 app.use(express.static(`${__dirname}/public`));
-// creating our own middleware function
-app.use((req, res, next) => {
-  console.log(`Hello 👋🏾... I am Middleware`);
-  next();
-});
 
+// creating our own middleware function
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   next();
