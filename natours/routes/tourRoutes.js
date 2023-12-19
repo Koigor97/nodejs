@@ -9,7 +9,7 @@ const router = express.Router();
 router
   .route('/')
   .get(tourController.getAllTours)
-  .post(tourController.checkBody, tourController.createTour);
+  .post(tourController.createTour);
 
 /////////////////////////////////////////////////////
 // specifyin the route base the given protocol -GET & PATCH & DELETE
