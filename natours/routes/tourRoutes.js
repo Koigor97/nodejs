@@ -4,6 +4,9 @@ const router = express.Router();
 
 // creating a param middleware
 // router.param('id', tourController.checkID);
+router
+  .route('/top-5-cheap')
+  .get(tourController.aliasTopTours, tourController.getAllTours);
 /////////////////////////////////////////////////////
 // specifyin the route base the given protocol - GET & POST
 router
