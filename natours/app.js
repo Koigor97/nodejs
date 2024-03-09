@@ -1,13 +1,17 @@
 const fs = require('fs');
 const express = require('express');
+const morgan = require('morgan');
 
 const app = express();
+
+app.use(morgan('dev'));
 app.use(express.json());
 
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
+////////////////////////////////////////////////////////////////////////
 // handling request and response for all tours
 function getAllTour(req, res) {
   res.status(200).json({
@@ -48,7 +52,6 @@ function createTour(req, res) {
   const newId = tours[tours.length - 1].id + 1;
   //getting the data sent
   const dataRecieved = req.body[0];
-  console.log(newId, dataRecieved);
 
   // creating a new data
   const newPost = { id: newId, ...dataRecieved };
@@ -70,7 +73,6 @@ function createTour(req, res) {
 function updateTour(req, res) {
   const { id } = req.params;
   const updateRecieved = req.body;
-  console.log(`data recieved: ${updateRecieved}`);
 
   if (id > tours.length) {
     res.status(404).json({
@@ -141,6 +143,56 @@ app
   .patch(updateTour)
   .delete(deleteTour);
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+function getAllUsers(req, res) {
+  res.status(505).json({
+    status: 'error',
+    result: 'This route is not yet defined',
+  });
+  return;
+}
+
+function getUser(req, res) {
+  res.status(505).json({
+    status: 'error',
+    result: 'This route is not yet defined',
+  });
+  return;
+}
+
+function createUser(req, res) {
+  res.status(505).json({
+    status: 'error',
+    result: 'This route is not yet defined',
+  });
+  return;
+}
+
+function updateUser(req, res) {
+  res.status(505).json({
+    status: 'error',
+    result: 'This route is not yet defined',
+  });
+  return;
+}
+
+function deleteUser(req, res) {
+  res.status(505).json({
+    status: 'error',
+    result: 'This route is not yet defined',
+  });
+  return;
+}
+
+// Users API routes
+app.route('/api/v1/users').get(getAllUsers).post(createUser);
+app
+  .route('/api/v1/users/:id')
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);
+
+///////////////////////////////////////////////////////////////////////
 const port = 8000;
 app.listen(port, () => {
   console.log(`App running on port ${port}`);
