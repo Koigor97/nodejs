@@ -1,48 +1,16 @@
 const express = require('express');
-
+const userController = require('../controllers/tourController');
 const router = express.Router();
 
-function getAllUsers(req, res) {
-  res.status(505).json({
-    status: 'error',
-    result: 'This route is not yet defined',
-  });
-  return;
-}
+router
+  .route('/')
+  .get(userController.getAllTour)
+  .post(userController.createTour);
 
-function getUser(req, res) {
-  res.status(505).json({
-    status: 'error',
-    result: 'This route is not yet defined',
-  });
-  return;
-}
-
-function createUser(req, res) {
-  res.status(505).json({
-    status: 'error',
-    result: 'This route is not yet defined',
-  });
-  return;
-}
-
-function updateUser(req, res) {
-  res.status(505).json({
-    status: 'error',
-    result: 'This route is not yet defined',
-  });
-  return;
-}
-
-function deleteUser(req, res) {
-  res.status(505).json({
-    status: 'error',
-    result: 'This route is not yet defined',
-  });
-  return;
-}
-
-router.route('/').get(getAllUsers).post(createUser);
-router.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
+router
+  .route('/:id')
+  .get(userController.getTour)
+  .patch(userController.updateTour)
+  .delete(userController.deleteTour);
 
 module.exports = router;
