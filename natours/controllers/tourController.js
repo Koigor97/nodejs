@@ -17,6 +17,18 @@ exports.checkID = (req, res, next, val) => {
   next();
 };
 
+exports.checkBody = (req, res, next) => {
+  const { price, name } = req.body[0];
+  if (!price || !name) {
+    res.status(400).json({
+      status: 'fail',
+      result: 'bad request',
+    });
+    return;
+  }
+  next();
+};
+
 // handling request and response for all tours
 exports.getAllTour = (req, res) => {
   res.status(200).json({
@@ -31,6 +43,7 @@ exports.getAllTour = (req, res) => {
 // handling request and response for a tour
 exports.getTour = (req, res) => {
   const { id } = req.params;
+
   const tour = tours.find((theTour) => theTour.id === +id);
 
   res.status(200).json({
