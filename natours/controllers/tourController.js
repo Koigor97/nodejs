@@ -15,13 +15,19 @@ exports.getAllTour = async (req, res) => {
 };
 
 // handling request and response for a tour
-exports.getTour = (req, res) => {
+exports.getTour = async (req, res) => {
   const { id } = req.params;
 
-  res.status(200).json({
-    status: 'success',
-    data: {},
-  });
+  try {
+    const tour = await Tour.findById(id);
+
+    res.status(200).json({
+      status: 'success',
+      data: tour,
+    });
+  } catch (err) {
+    res.status(400).json({ status: 'fail', message: err });
+  }
 };
 
 //handling post request to route
@@ -39,26 +45,37 @@ exports.createTour = async (req, res) => {
 };
 
 // handling request and response for updating a tour
-exports.updateTour = (req, res) => {
+exports.updateTour = async (req, res) => {
   const { id } = req.params;
-  const updateRecieved = req.body;
+  const dataRecieved = req.body;
 
-  const newUpdatedTour = { ...updateRecieved };
+  try {
+    const tour = await Tour.findByIdAndUpdate(id, dataRecieved, {
+      new: true,
+      runValidators: true,
+    });
 
-  res.status(200).json({
-    status: 'success',
-    data: {},
-  });
+    res.status(200).json({
+      status: 'success',
+      data: tour,
+    });
+  } catch (err) {
+    res.status(400).json({ status: 'fail', message: err });
+  }
 };
 
 // handling request and response for deleting a tour
-exports.deleteTour = (req, res) => {
+exports.deleteTour = async (req, res) => {
   const { id } = req.params;
 
-  // saving data to the tours-simple.json file
+  try {
+    const tour = await Tour.findByIdAndDelete(id);
 
-  res.status(200).json({
-    status: 'success',
-    data: {},
-  });
+    res.status(204).json({
+      status: 'success',
+      data: null,
+    });
+  } catch (err) {
+    res.status(400).json({ status: 'fail', message: err });
+  }
 };
