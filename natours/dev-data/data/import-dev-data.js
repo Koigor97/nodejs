@@ -24,17 +24,20 @@ const client = makeConnection(db);
 
 ///////////////////////////////////////////////////////////////////////
 // Starting the server
-const port = process.env.PORT || 8030;
-app.listen(port, () => {
-  console.log(`App running on port ${port}`);
-});
+// const port = process.env.PORT || 8030;
+// app.listen(port, () => {
+//   console.log(`App running on port ${port}`);
+// });
 
-const tours = JSON.parse(fs.readFileSync('tours-simple.json', 'utf-8'));
+const tours = JSON.parse(
+  fs.readFileSync(`${__dirname}/tours-simple.json`, 'utf-8')
+);
 
 // import data into db
 const importData = async () => {
   try {
     await Tour.create(tours);
+    process.exit();
   } catch (err) {
     console.log(err);
   }
@@ -44,8 +47,16 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     await Tour.deleteMany();
-    console.log('Data successful');
+    console.log('Data successfully deleted');
+    process.exit();
   } catch (err) {
     console.log(err);
   }
 };
+
+if (process.argv[2] === '--import') {
+  importData();
+} else if (process.argv[2] === '--delete') {
+  deleteData();
+}
+console.log(process.argv);
