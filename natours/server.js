@@ -19,7 +19,7 @@ async function makeConnection(dbString) {
 // getting the database string
 const db = process.env.DB.replace('<PASSWORD>', process.env.DB_PASSWORD);
 //connect to database
-const client = makeConnection(db);
+makeConnection(db);
 
 ///////////////////////////////////////////////////////////////////////
 // Starting the server
