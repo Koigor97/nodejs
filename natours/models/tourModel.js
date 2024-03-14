@@ -66,6 +66,9 @@ tourSchema.virtual('durationWeeks').get(function () {
   return this.duration / 7;
 });
 
+// Document middleware
+tourSchema.pre('save', function () {});
+
 // creating a model
 const Tour = mongoose.model('Tour', tourSchema);
 
