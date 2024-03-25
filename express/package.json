@@ -9,6 +9,7 @@
   "author": "Samuel",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.1"
+    "express": "^4.19.1",
+    "helmet": "^7.1.0"
   }
 }
