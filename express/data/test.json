@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "name": "Mountain Expedition",
+    "duration": 7,
+    "maxGroupSize": 15,
+    "difficulty": "challenging",
+    "ratingsAverage": 4.9,
+    "ratingsQuantity": 25,
+    "price": 799,
+    "summary": "Experience the thrill of climbing majestic mountains.",
+    "description": "Join us on this unforgettable journey to conquer some of the world's most breathtaking peaks. This expedition is designed for experienced hikers and climbers looking for a challenging adventure.",
+    "imageCover": "mountain-expedition-cover.jpg",
+    "images": [
+      "mountain-expedition-1.jpg",
+      "mountain-expedition-2.jpg",
+      "mountain-expedition-3.jpg"
+    ],
+    "startDates": ["2024-06-15,08:00", "2024-07-20,08:00", "2024-08-25,08:00"]
+  },
+  {
+    "id": 2,
+    "name": "Desert Safari",
+    "duration": 3,
+    "maxGroupSize": 30,
+    "difficulty": "moderate",
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 40,
+    "price": 299,
+    "summary": "Explore the vast deserts and experience local culture.",
+    "description": "Embark on a thrilling adventure through the mesmerizing deserts of the world. This safari will take you on a journey to discover the beauty of the desert landscapes and immerse yourself in the local culture.",
+    "imageCover": "desert-safari-cover.jpg",
+    "images": [
+      "desert-safari-1.jpg",
+      "desert-safari-2.jpg",
+      "desert-safari-3.jpg"
+    ],
+    "startDates": ["2024-04-10,09:00", "2024-05-15,09:00", "2024-09-20,09:00"]
+  },
+  {
+    "id": 3,
+    "name": "Coastal Adventure",
+    "duration": 5,
+    "maxGroupSize": 20,
+    "difficulty": "easy",
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 30,
+    "price": 499,
+    "summary": "Discover the beauty of coastal landscapes and marine life.",
+    "description": "Join us on an exciting journey along the stunning coastlines of the world. This adventure offers a unique opportunity to explore the diverse marine life and scenic coastal landscapes.",
+    "imageCover": "coastal-adventure-cover.jpg",
+    "images": [
+      "coastal-adventure-1.jpg",
+      "coastal-adventure-2.jpg",
+      "coastal-adventure-3.jpg"
+    ],
+    "startDates": ["2024-03-20,10:00", "2024-06-25,10:00", "2024-09-10,10:00"]
+  },
+  {
+    "id": 4,
+    "name": "Cultural Experience",
+    "duration": 4,
+    "maxGroupSize": 25,
+    "difficulty": "moderate",
+    "ratingsAverage": 4.6,
+    "ratingsQuantity": 35,
+    "price": 599,
+    "summary": "Immerse yourself in the rich cultural heritage of various destinations.",
+    "description": "Embark on a cultural journey to explore the traditions, history, and lifestyle of different cultures around the world. This experience offers a deep insight into the cultural diversity of our planet.",
+    "imageCover": "cultural-experience-cover.jpg",
+    "images": [
+      "cultural-experience-1.jpg",
+      "cultural-experience-2.jpg",
+      "cultural-experience-3.jpg"
+    ],
+    "startDates": ["2024-05-05,09:00", "2024-08-10,09:00", "2024-11-15,09:00"]
+  },
+  {
+    "id": 5,
+    "name": "Wildlife Safari",
+    "duration": 6,
+    "maxGroupSize": 20,
+    "difficulty": "moderate",
+    "ratingsAverage": 4.8,
+    "ratingsQuantity": 28,
+    "price": 699,
+    "summary": "Embark on an unforgettable journey to observe wildlife in their natural habitat.",
+    "description": "Join us on a thrilling wildlife safari to explore the natural habitats of various wildlife species. This safari offers an up-close encounter with some of the most majestic creatures on Earth.",
+    "imageCover": "wildlife-safari-cover.jpg",
+    "images": [
+      "wildlife-safari-1.jpg",
+      "wildlife-safari-2.jpg",
+      "wildlife-safari-3.jpg"
+    ],
+    "startDates": ["2024-07-01,06:00", "2024-09-15,06:00", "2024-12-20,06:00"]
+  },
+  {
+    "id": 6,
+    "name": "Historical Tour",
+    "duration": 4,
+    "maxGroupSize": 15,
+    "difficulty": "easy",
+    "ratingsAverage": 4.4,
+    "ratingsQuantity": 32,
+    "price": 449,
+    "summary": "Explore the historical landmarks and monuments of ancient civilizations.",
+    "description": "Embark on a journey back in time to explore the fascinating history of ancient civilizations. This tour offers a unique opportunity to visit historical landmarks and monuments.",
+    "imageCover": "historical-tour-cover.jpg",
+    "images": [
+      "historical-tour-1.jpg",
+      "historical-tour-2.jpg",
+      "historical-tour-3.jpg"
+    ],
+    "startDates": ["2024-04-15,10:00", "2024-07-20,10:00", "2024-10-05,10:00"]
+  }
+]
