@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>SocketIO 101</h1>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io("http://localhost:6050");
+      console.log(socket);
+
+      socket.on("connect", () => {
+        console.log(socket.id);
+      });
+
+      socket.on("messageFromServer", (data) => {
+        console.log(data);
+      });
+
+      socket.emit("messageFromClient", {
+        data: "Thank you for the hospitality",
+      });
+    </script>
+  </body>
+</html>
